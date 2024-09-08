@@ -1,0 +1,19 @@
+.navbar,
+.arraySize,
+.sortingTypes {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.navbar {
+  text-align: center;
+}
+
+.sortingTypes {
+  width: 40%;
+}
+
+.main {
+  height: 70vh;
+}
