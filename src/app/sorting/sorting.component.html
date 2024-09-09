@@ -1,6 +1,6 @@
 <div>
   <div class="navbar">
-    <div>Generate new array</div>
+    <span (click)="this.generateNumbers()">Generate new array</span>
     <div class="arraySize">
       <div>Change array size</div>
       <div>
@@ -13,5 +13,13 @@
       <span>Bubble sort</span>
     </div>
   </div>
-  <div class="main"></div>
+  <div class="main">
+    <div
+      class="number"
+      *ngFor="let item of this.array"
+      [ngStyle]="{ 'padding-top.px': item * 5 }"
+    >
+      {{ item }}
+    </div>
+  </div>
 </div>

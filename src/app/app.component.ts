@@ -4,6 +4,7 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { SortingComponent } from './sorting/sorting.component';
+import { CommonModule, NgFor } from '@angular/common';
 
 @Component({
   selector: 'app-root',
@@ -14,6 +15,8 @@ import { SortingComponent } from './sorting/sorting.component';
     FooterComponent,
     HomeComponent,
     SortingComponent,
+    CommonModule,
+    NgFor,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',

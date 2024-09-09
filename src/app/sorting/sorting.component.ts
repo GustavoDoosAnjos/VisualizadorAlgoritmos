@@ -1,17 +1,25 @@
 import { Component } from '@angular/core';
+import { NumberComponent } from '../number/number.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-sorting',
   standalone: true,
-  imports: [],
+  imports: [NumberComponent, CommonModule],
   templateUrl: './sorting.component.html',
   styleUrl: './sorting.component.scss',
 })
 export class SortingComponent {
-  private generateNumbers(): number[] {
-    const array: number[] = [];
-    const arraySize = document.querySelector('.arraySize') as HTMLInputElement;
+  arraySize: number = 10;
+  array: number[] = [];
 
-    return array;
+  generateNumbers(): void {
+    this.array = Array.from({ length: this.arraySize }, () =>
+      Math.floor(Math.random() * 110)
+    );
+  }
+
+  ngOnInit() {
+    this.generateNumbers();
   }
 }

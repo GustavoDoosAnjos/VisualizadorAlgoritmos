@@ -1,19 +1,30 @@
 .navbar,
 .arraySize,
-.sortingTypes {
+.sortingTypes,
+.main {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
 }
 
+span:hover {
+  cursor: pointer;
+}
+
 .navbar {
   text-align: center;
+  margin-bottom: 50px;
+  margin-top: 50px;
 }
 
 .sortingTypes {
   width: 40%;
 }
 
-.main {
-  height: 70vh;
+.number {
+  color: whitesmoke;
+  background-color: darkcyan;
+  width: 50px;
+  height: 25px;
+  text-align: center;
 }
