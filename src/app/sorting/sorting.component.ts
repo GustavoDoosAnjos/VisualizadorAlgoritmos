@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-import { NumberComponent } from '../number/number.component';
 import { CommonModule } from '@angular/common';
+import { mergeSort } from './sorting.tools';
 
 @Component({
   selector: 'app-sorting',
   standalone: true,
-  imports: [NumberComponent, CommonModule],
+  imports: [CommonModule],
   templateUrl: './sorting.component.html',
   styleUrl: './sorting.component.scss',
 })
@@ -17,6 +17,13 @@ export class SortingComponent {
     this.array = Array.from({ length: this.arraySize }, () =>
       Math.floor(Math.random() * 110)
     );
+  }
+
+  merge() {
+    const sorted = mergeSort(this.array);
+
+    console.log(sorted);
+    return sorted;
   }
 
   ngOnInit() {
