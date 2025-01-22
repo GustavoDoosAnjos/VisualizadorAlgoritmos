@@ -1,44 +1,23 @@
-//var animations: [[string, number, number]] = [[]];
 
-export function mergeSort(array: number[]): number[] {
-  if (array.length <= 1) {
-    return array;
-  }
+export function bubbleSort(OldArray: number[]): [[string, number, number]] {
+  const array = Array.from(OldArray);
+  var animations: [[string, number, number]] = [['start', 0, 0]];
 
-  var mid = Math.floor(array.length / 2);
-  var left = array.slice(0, mid);
-  var right = array.slice(mid);
+  if (!array) throw new Error('Invalid input');
 
-  return mergeHelper(mergeSort(left), mergeSort(right));
-}
-
-function mergeHelper(leftArray: number[], rightArray: number[]): number[] {
-  const array = [];
-  let leftArrayPointer = 0;
-  let rightArrayPointer = 0;
-
-  while (
-    leftArrayPointer < leftArray.length &&
-    rightArrayPointer < rightArray.length
-  ) {
-    if (leftArray[leftArrayPointer] < rightArray[rightArrayPointer]) {
-      array.push(leftArray[leftArrayPointer]);
-      leftArrayPointer++;
-    } else {
-      array.push(rightArray[rightArrayPointer]);
-      rightArrayPointer++;
+  for (let i = array.length; i > 1; i--) {
+    for (let j = 0; j < i - 1; j++) {
+      animations.push(['comparison', j, j+1])
+      if(array[j] > array[j+1]) {
+        animations.push(['swap', j, j+1])
+        swap(array, j, j+1)
+      }
     }
   }
 
-  while (leftArrayPointer < leftArray.length) {
-    array.push(leftArray[leftArrayPointer]);
-    leftArrayPointer++;
-  }
+  return animations;
+}
 
-  while (rightArrayPointer < rightArray.length) {
-    array.push(rightArray[rightArrayPointer]);
-    rightArrayPointer++;
-  }
-
-  return array;
+function swap(array: number[], leftIndex: number, rightIndex: number) {
+  [[array[leftIndex], array[rightIndex]] = [array[rightIndex], array[leftIndex]]]
 }

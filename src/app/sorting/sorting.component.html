@@ -8,15 +8,15 @@
       </div>
     </div>
     <div class="sortingTypes">
-      <span (click)="this.merge()">Merge sort</span>
+      <span (click)="this.bubbleSort()">Bubble sort</span>
       <span>Quick sort</span>
-      <span>Bubble sort</span>
     </div>
   </div>
   <div class="main">
     <div
       class="number"
-      *ngFor="let item of this.array"
+      id={{i}}
+      *ngFor="let item of this.array; index as i"
       [ngStyle]="{ 'padding-top.px': item * 5 }"
     >
       {{ item }}
